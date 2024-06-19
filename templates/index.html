@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Backup Tool</title>
+</head>
+<body>
+    <h1>Spotify Playlist Backup</h1>
+    <button onclick="window.location.href='/login'">Login with Spotify</button>
+    <input type="text" id="playlist_id" placeholder="Enter Playlist ID">
+    <button onclick="fetchPlaylist()">Fetch Playlist</button>
+    <button onclick="downloadCSV()">Download CSV</button>
+    <div id="playlist"></div>
+
+    <script>
+        async function fetchPlaylist() {
+            const playlistId = document.getElementById('playlist_id').value;
+            const response = await fetch(`/get_playlist/${playlistId}`);
+            const data = await response.json();
+            const playlistDiv = document.getElementById('playlist');
+            playlistDiv.innerHTML = JSON.stringify(data, null, 2);
+        }
+
+        async function downloadCSV() {
+            const playlistId = document.getElementById('playlist_id').value;
+            const response = await fetch(`/download_csv/${playlistId}`);
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = `${playlistId}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
