@@ -1,8 +1,13 @@
 import base64
 import requests
 
+<<<<<<< HEAD
 client_id = '7d920b2e3be9402ba85d5641cae2f7f1'
 client_secret = '76d184f228d845d8802d93c80613dbfd'
+=======
+client_id = ''
+client_secret = ''
+>>>>>>> 863a1fc20c858a790f9faecdd8a65d0189ea7d53
 
 def get_access_token():
     auth_url = 'https://accounts.spotify.com/api/token'

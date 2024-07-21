@@ -2,6 +2,21 @@ from flask import Flask, jsonify, send_file, render_template
 from spotify_api import get_playlist, save_playlist_to_csv
 
 app = Flask(__name__)
+<<<<<<< HEAD
+=======
+app.secret_key = 'test'
+oauth = OAuth(app)
+
+spotify = oauth.register(
+    name='spotify',
+    client_id='',
+    client_secret='',
+    access_token_url='https://accounts.spotify.com/api/token',
+    authorize_url='https://accounts.spotify.com/authorize',
+    redirect_uri='YOUR_REDIRECT_URI',
+    client_kwargs={'scope': 'user-library-read playlist-read-private'}
+)
+>>>>>>> 863a1fc20c858a790f9faecdd8a65d0189ea7d53
 
 @app.route('/')
 def homepage():
