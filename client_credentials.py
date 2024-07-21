@@ -2,11 +2,8 @@ import base64
 import requests
 
 
-client_id = '7d920b2e3be9402ba85d5641cae2f7f1'
-client_secret = '13d5a7c0089146009ccb76288dd75108'
-
-# client_id = ''
-# client_secret = ''
+client_id = ''
+client_secret = ''
 
 
 def get_access_token():
