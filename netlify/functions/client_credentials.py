@@ -1,10 +1,11 @@
 import base64
 import requests
-
-client_id = '7d920b2e3be9402ba85d5641cae2f7f1'
-client_secret = '76d184f228d845d8802d93c80613dbfd'
+import os
 
 def get_access_token():
+    client_id = os.environ.get('SPOTIFY_CLIENT_ID')
+    client_secret = os.environ.get('SPOTIFY_CLIENT_SECRET')
+    
     auth_url = 'https://accounts.spotify.com/api/token'
     headers = {
         'Authorization': 'Basic ' + base64.b64encode((client_id + ':' + client_secret).encode()).decode()
@@ -19,4 +20,3 @@ def get_access_token():
 if __name__ == "__main__":
     token = get_access_token()
     print(f"Access Token: {token}")
-    
