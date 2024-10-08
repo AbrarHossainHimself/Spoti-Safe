@@ -70,7 +70,7 @@ The CSV file will have the following structure:
 
 | Artist       | Album         | Track Name         |
 |--------------|---------------|--------------------|
-| Coldplay     | Parachutes    | Yellow             |
+| Death Grips    | Exmilitary    | Guillotine             |
 | Tame Impala  | Currents      | The Less I Know... |
 | Radiohead    | OK Computer   | Karma Police       |
 
@@ -81,10 +81,3 @@ The CSV file will have the following structure:
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-## Author
-Md Abrar Hossain
-
----
-
-Let me know if you'd like to refine or expand any of the sections!
