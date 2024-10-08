@@ -1,7 +1,3 @@
-Here's an informative README section for your project:
-
----
-
 # Spoti-safe: Spotify Playlist Backup Platform
 
 ## Project Description
